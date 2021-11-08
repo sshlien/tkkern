@@ -45,12 +45,12 @@ installed. Details on acquiring this interpreter can be found on [
 https://www.tcl.tk/software/tcltk/download.html](https://www.tcl.tk/software/tcltk/download.html)
 if it is missing from your system.
 
-After downloading tkkern.tcl and tooltip.tcl, you should create a separate
-folder for example tkkern, and put these files in that folder. You may also
-need to include the JavaScript verovio-toolkit-wasm.js. When you run
-tkkern.tcl, it will create or update the initialization file tkkern.ini where
-all you configuration information will be stored. When you render a tune, it
-will create a temporary html file in your folder which will be sent to your
+After downloading tkkern.tcl, you should create a separate folder for example
+tkkern, and put tkkern.tcl in that folder. You may also need to include the
+JavaScript verovio-toolkit-wasm.js discussed below. When you run tkkern.tcl,
+it will create or update the initialization file tkkern.ini where all you
+configuration information will be stored. When you render a tune, it will
+create a temporary html file in your folder which will be sent to your
 browser. By default this file will be called tune.html; however, you can
 change the name and location of the file in the cfg window.
 
