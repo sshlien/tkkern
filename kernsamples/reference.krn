@@ -1,0 +1,71 @@
+!!!From UNIX Tools for Musical Research
+!!! - The Humdrum Toolkit
+!!! - REFERENCE MANUAL
+!!! - by David Huron 1995
+
+!!!COM: Composer
+!!!COA: Attributed composer
+!!!COS: Suspected composer
+!!!COL: Composer's alias
+!!!CDT: Composer's birth and death dates
+!!!CNT: Naitionality of the composer
+!!!LYR: Lyricist
+!!!LIB: Librettist
+!!!LAR: Arranger
+!!!LOR: Ochestrator
+!!!TXO: Original langauge of vocal text
+!!!TRN: Translator of text
+!!!MPN: Performer's name
+!!!MPS: Suspected performer
+!!!MRD: Date of performance
+!!!MLC: Place of performance
+!!!MCN: Name of the conductor of the performance
+!!!MPD: Date of first performance
+!!!OTL: Title of the specific section
+!!!XEN: Translated title (in English)
+!!!OTP: Popular title
+!!!OTA: Alternative title
+!!!OTR: Larger work from which the piece is a part
+!!!OAC: Act number
+!!!OSC: Scene number
+!!!OMV: Movement number
+!!!OPS: Opus number
+!!!ONM: Number
+!!!OVM: Volume
+!!!ODE: Dedication
+!!!OCO: Commision
+!!!OCL: Collector
+!!!ODT: Date of composition
+!!!OCY: Country of composition
+!!!PUB: Publication status
+!!!PPR: First publisher
+!!!PDT: Date first published
+!!!PPP: Place first published
+!!!YEP: Publisher of electronic edition
+!!!YEC: Date and owner of electronic copyright
+!!!YED: Date electronic edition released
+!!!YEM: Copyright message
+!!!YEN: Country of copyright
+!!!YOR: Original document
+!!!YOO: Original document owner
+!!!YOY: Original copyright year
+!!!EED: Electronic Editor
+!!!ENC: Encoder of electronic document
+!!!EMD: Document modification description
+!!!EEV: Electronic edition version
+!!!EFL: File number
+!!!EST: Encoding Status
+!!!VTS: Checksum validation number
+!!!RLN: ASCII language setting
+!!!RDF: User-defined signifier
+!!!RDT: Date encoded
+**kern
+*clefG2
+*k[f#]
+*G:
+*M4/4
+*MM120
+g
+
+
+

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang=en>
+  <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="index,follow">
+  <title>User Inteface to the Verovio JavaScript Toolkit </title>
+  <style>
+    body {
+         margin: 40px;
+         font-family: Arial,Helvetica,sans-serif;
+         max-width: 650px;
+         height:100%;
+         background-color: #C8CDB8;
+         }
+  </style>
+  
+</head>
+<body>
+<h2>User Interface to the Verovio JavaScript Toolkit Library</h2>
+<h3> Introduction</h3>
+<p>
+There are over 100,000 music files encoded in <a href = "https://www.humdrum.org/rep/kern/index.html"> **kern data format</a>. This
+includes the large database of <a href = "https://josquin.stanford.edu/">early music</a> and <a href = "https://github.com/pl-wnifc/humdrum-polish-scores">polish scores</a>.
+<p>
+The **kern format was developed for the humdrum software package
+to analyze the music. Software to convert this format to MEI, music XML, SVG
+and ABC notation format are part of the Humdrum software library.
+<p>
+Many of the **kern files have been converted into abc music notation
+format which you can find <a href="https://ifdo.ca/~seymour/kern2abc/">here</a>.
+The translation to abc notation format is not
+perfect and some presentation information may be lost. The Verovio
+project has produced JavaScript software for converting the **kern files
+into music scores that can run on all computer systems.
+
+<p>
+The JavaScript Toolkit Library <a href="https://book.verovio.org/first-steps/" >verovio toolkit</a>
+allows you to render a kern file embedded in your web page to a music score.
+Unlike the <a href="https://plugin.humdrum.org/">Humdrum Notation Plugin</a>,
+the JavaScript code can run directly in your computer, rather
+than on a remote server.
+This program contains the tcl/tk code which selects the input kern
+file to be embedded into the web page. The score is inserted into a
+temporary web page (html file) with the included commands
+to convert the embedded file into an svg representation of the score
+plugin. The html file is then forwarded to your favourite browser.
+The user has access to the various options which control the layout
+of the score in the html file. In addition the user interface allows
+you to view the input kern file either in a plain text editor, or
+in a graphics window.
+<p>
+The user can create portable html web page
+which loads the JavaScript code from a remote server. This file
+would work on any system. If the user wishes to run this program
+without internet access, then the JavaScript code can be loaded
+directly from your own computer.
+<p>
+This application provides a convenient way of displaying kern
+files on your browser and experimenting with the various options
+described in the documentation.
+
+<p>
+
+To run this software, you require Tcl/Tk the interpreter, either 8.5 or 8.6.
+This frequently comes with the Linux or OS operating system or can
+be easily installed. Details on acquiring this interpreter can be
+found on <a href="https://www.tcl.tk/software/tcltk/download.html">
+https://www.tcl.tk/software/tcltk/download.html</a> if it is missing
+from your system.
+
+<p>
+After downloading tkkern.tcl and tooltip.tcl, you should create a separate
+folder for example tkkern, and put these files in that folder.
+You may also need to include the JavaScript verovio-toolkit-wasm.js.
+When you run tkkern.tcl, it will create or update the initialization
+file tkkern.ini where all you configuration information will be stored.
+When you render a tune, it will create a temporary html file in your
+folder which will be sent to your browser. By default this file will
+be called tune.html; however, you can change the name and location of
+the file in the cfg window.
+<p>
+Tkkern.tcl will pop up various windows when you run the program.
+You can move these windows around your screen, and if they remain
+open when you close tkkern, it will store the positions of tese windows
+and move them to these locations the next time you run the program.
+<p>
+To start this script in a terminal or command window, enter
+
+<pre>
+wish tkkern.tcl
+</pre>
+or double click on the tkkern.tcl file icon.
+
+<p>
+The rest of this document describes how to run this
+application.
+
+<h3> Main Window </h3>
+<p>
+This is the main window containing 5 buttons and a listbox containing
+the file names of all the kern files is a user chosen directory.
+<p>
+<img SRC = "main.gif" ALT="main window" >
+<p>
+If you hover the mouse pointer on any of the buttons, a tooltip
+will pop up with an explanation of the buttons function. Clicking
+on any the buttons will cause another window to pop up. By default
+the new window is placed in the center of the screen and may obscure
+the main window. You should move the window to a new location
+and the program will remember this location for the next time you run
+this program.
+<p>
+You select the folder containing the kern files by clicking on the
+<b>open</b> button.
+
+<h3>cfg</h3>
+<p>
+Before using this script, it is recommended that you open the cfg
+window which looks like this.
+<p>
+<img SRC = "cfg.gif" ALT="cfg window" >
+<p>
+The program requires an internet browser like Firefox in order
+to display the kern file in common music notation. The Firefox
+browser comes with most Linux distributions, so it is sufficient
+to enter firefox in the entry box. For Windows 10, it will be
+necessary to indicate the full path to the browser executable --
+for example.
+<pre>
+"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+</pre>
+or
+<pre>
+"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+</pre>
+<p>
+Note that even though the Windows file system uses back slashes
+to indicate the file path, this program requires that you use
+forward slashes. Tcl interprets the back slash character as
+something else.
+<p>
+You can use the button labeled <b>find or enter browser</b> to 
+navigate to the binary of this browser. Similarly, the browser
+will require the full path to the temporary file (tune.html).
+You only need to do this once since this information will be
+stored in the text file tkkern.ini. 
+
+<p>
+The JavaScript code will be loaded either from
+<pre>
+ src="http://verovio-script.humdrum.org/scripts/verovio-toolkit-wasm.js"
+ or
+ src="verovio-toolkit-wasm.js"
+</pre>
+depending on whether you tick the <b>remote javascript </b> or the
+<b> local javascript </b> radiobutton.
+If you decide to load the JavaScript code from your own computer,
+you need the file verovio-toolkit-wasm.js file to be in the same
+folder as tkkern. You can download this file from
+<a href="https://verovio-script.humdrum.org/scripts/verovio-toolkit-wasm.js">https://verovio-script.humdrum.org/scripts/verovio-toolkit-wasm.js</a>.
+
+<p>
+The text editor is needed if you click on the <b>kern/kernFile</b> menu
+command. This allows you to view the selected **kern file in an
+editor that you choose.
+
+<p>
+Tkkern creates a temporary html file that is forwarded to your
+browser. By default it is called tune.html; however, you are free
+to specify any other file.
+
+<h3>Open</h3>
+<p>
+Clicking this button opens a file folder browser for selecting
+the folder containing your kern files. It is not sufficient to
+just select this file. Once you open this folder, it will
+appear empty unless it contains other subfolders.
+
+<h3> kern </h3>
+<p>
+The kern button allows presents a choice of two ways of
+viewing the input kern file.
+Clicking on the <b>spineList</b> button will pop up two windows
+similar to below. The header and tail of the selected kern file
+is shown in one window and the spines are displayed in separate
+listboxes in the other window. Presently, all you can do is
+to scroll down the window or close it when you are done. If the
+kern file contains spines which split into other spines, the
+contents will not line up correctly. More work is needed.
+<p>
+<img SRC = "headr.gif" ALT="header window" >
+<p>
+<img SRC = "spines.gif" ALT="spine window" >
+<p>
+Clicking the <b>kernFile</b> will open the file with the
+text editor that you have chosen in the cfg window.
+
+<h3> Options </h3>
+<p>
+The tkkern script allows you to control the appearance of the
+rendered music using various options below.
+<p>
+<img SRC = "options.gif" ALT="options window" >
+<p>
+Hovering the mouse pointer on the labels associated
+with any of these options will pop up a tooltip giving
+the default value and the allowable values for these
+options. If an entry box is blank, then the option and
+value will not be inserted into the web page and Hnp
+will substitute the default value.
+
+<h3>Render</h3>
+Clicking this file will create a temporary html file
+which contains the selected kern file and the specified
+options. The internet browser that you specified in the
+cfg window will attempt to open this file.
+The processing time to render the kern file depends
+more on the browser rather than the size of the file.
+A tiny kern file was rendered in 5 seconds on Microsoft
+Edge on Windows 10, but took 14 seconds on Firefox
+on Cinnamon Mint 20 on VirtualBox. In contrast a large
+file used 9 seconds on Microsoft Edge and 21 seconds on
+Firefox.
+
+<h3>Help</h3>
+
+<p>
+Clicking the <b>help</b> button will open
+<a href="https://www.humdrum.org/rep/kern/index.html">https://www.humdrum.org/rep/kern/index.html</a>
+in your browser. The web page describes the **kern format in detail.
+<p>
+This release includes a set of test files in the folder kernsamples.
+The samples, is a good place to start to learn the **kern notation.
+
+
+
+</p>
+<hr width="75%">
+<center>This page was last updated on November 7 2021.
+</center>
+</body>
+</html>
